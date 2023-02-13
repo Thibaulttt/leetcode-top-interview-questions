@@ -1,12 +1,13 @@
 class Solution:
+  # def hammingWeight(self, n: int) -> int:
+  #   r = 0
+  #   for c in str(n):
+  #     if c == "1":
+  #         r += 1
+  #   return r
   def hammingWeight(self, n: int) -> int:
-    r = 0
-    for c in str(n):
-      if c == "1":
-          r += 1
-    return r
-    
-# n = "00000000000000000000000000001011"
+    return str(bin(n)).count("1")
 
 solution = Solution()
-print(solution.hammingWeight("00000000000000000000000000001011"))
+n = int("00000000000000000000000000001011", base=2)
+print(solution.hammingWeight(n))
