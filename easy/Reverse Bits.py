@@ -17,14 +17,14 @@
 
 class Solution:
     def reverseBits(self, n: int) -> int:
-        print(str(bin(n)[2:]))
-        return int(str(bin(n)[2:])[::-1], 2)
+        return int(str(bin(n)[2:].zfill(32))[::-1], 2)
+        # return int(''.join(reversed(str(bin(n))[2:])), base=2)
 
 # 00000010100101000001111010011100
 # 00111001011110000010100101000000
 
 # 00111001011110000010100101000000
-n =  43261596
+n =  int("00000010100101000001111010011100", base=2)
 
 solution = Solution()
-print(solution.reverseBits(n), 2)
+print(solution.reverseBits(n))
